@@ -1,0 +1,6 @@
+geopandas>=1.0
+pandas
+shapely
+matplotlib
+folium
+mapclassify

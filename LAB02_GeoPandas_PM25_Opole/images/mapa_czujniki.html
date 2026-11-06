@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_c935690037d2358077f1b71aa608adc4 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    
+                    <style>
+                        .foliumtooltip {
+                            
+                        }
+                       .foliumtooltip table{
+                            margin: auto;
+                        }
+                        .foliumtooltip tr{
+                            text-align: left;
+                        }
+                        .foliumtooltip th{
+                            padding: 2px; padding-right: 8px;
+                        }
+                    </style>
+            
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_c935690037d2358077f1b71aa608adc4" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_c935690037d2358077f1b71aa608adc4 = L.map(
+                "map_c935690037d2358077f1b71aa608adc4",
+                {
+                    center: [50.692244, 17.903],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 10,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+            L.control.scale().addTo(map_c935690037d2358077f1b71aa608adc4);
+
+            
+
+        
+    
+            var tile_layer_6ff1fc64431ae25cd698bd34d22ec5a0 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 19,
+  "maxNativeZoom": 19,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors",
+  "subdomains": "abc",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_6ff1fc64431ae25cd698bd34d22ec5a0.addTo(map_c935690037d2358077f1b71aa608adc4);
+        
+    
+            map_c935690037d2358077f1b71aa608adc4.fitBounds(
+                [[50.616593, 17.785622], [50.767895, 18.020378]],
+                {}
+            );
+        
+    
+        function geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_styler(feature) {
+            switch(feature.id) {
+                case "0": case "42": 
+                    return {"color": "#f87f2c", "fillColor": "#f87f2c", "fillOpacity": 0.5, "weight": 2};
+                case "1": case "34": 
+                    return {"color": "#fee6cf", "fillColor": "#fee6cf", "fillOpacity": 0.5, "weight": 2};
+                case "2": case "59": case "106": 
+                    return {"color": "#fda965", "fillColor": "#fda965", "fillOpacity": 0.5, "weight": 2};
+                case "3": 
+                    return {"color": "#fdc590", "fillColor": "#fdc590", "fillOpacity": 0.5, "weight": 2};
+                case "4": case "17": case "18": case "33": 
+                    return {"color": "#fdd9b4", "fillColor": "#fdd9b4", "fillOpacity": 0.5, "weight": 2};
+                case "5": 
+                    return {"color": "#f87d29", "fillColor": "#f87d29", "fillOpacity": 0.5, "weight": 2};
+                case "6": 
+                    return {"color": "#fee6ce", "fillColor": "#fee6ce", "fillOpacity": 0.5, "weight": 2};
+                case "7": case "115": 
+                    return {"color": "#fff5eb", "fillColor": "#fff5eb", "fillOpacity": 0.5, "weight": 2};
+                case "8": 
+                    return {"color": "#feebd7", "fillColor": "#feebd7", "fillOpacity": 0.5, "weight": 2};
+                case "9": 
+                    return {"color": "#fdd3a7", "fillColor": "#fdd3a7", "fillOpacity": 0.5, "weight": 2};
+                case "10": 
+                    return {"color": "#c34002", "fillColor": "#c34002", "fillOpacity": 0.5, "weight": 2};
+                case "11": case "51": 
+                    return {"color": "#fddbb8", "fillColor": "#fddbb8", "fillOpacity": 0.5, "weight": 2};
+                case "12": case "57": 
+                    return {"color": "#fdd2a6", "fillColor": "#fdd2a6", "fillOpacity": 0.5, "weight": 2};
+                case "13": case "96": 
+                    return {"color": "#fee4ca", "fillColor": "#fee4ca", "fillOpacity": 0.5, "weight": 2};
+                case "14": 
+                    return {"color": "#f57622", "fillColor": "#f57622", "fillOpacity": 0.5, "weight": 2};
+                case "15": case "20": case "29": case "116": 
+                    return {"color": "#fdbb81", "fillColor": "#fdbb81", "fillOpacity": 0.5, "weight": 2};
+                case "16": 
+                    return {"color": "#f5741f", "fillColor": "#f5741f", "fillOpacity": 0.5, "weight": 2};
+                case "19": case "84": 
+                    return {"color": "#f87e2b", "fillColor": "#f87e2b", "fillOpacity": 0.5, "weight": 2};
+                case "21": case "38": 
+                    return {"color": "#fd8c3b", "fillColor": "#fd8c3b", "fillOpacity": 0.5, "weight": 2};
+                case "22": 
+                    return {"color": "#fdc692", "fillColor": "#fdc692", "fillOpacity": 0.5, "weight": 2};
+                case "23": case "58": case "117": 
+                    return {"color": "#fd9547", "fillColor": "#fd9547", "fillOpacity": 0.5, "weight": 2};
+                case "24": case "83": 
+                    return {"color": "#feddbc", "fillColor": "#feddbc", "fillOpacity": 0.5, "weight": 2};
+                case "25": case "75": 
+                    return {"color": "#fda25a", "fillColor": "#fda25a", "fillOpacity": 0.5, "weight": 2};
+                case "26": case "125": 
+                    return {"color": "#fdb06e", "fillColor": "#fdb06e", "fillOpacity": 0.5, "weight": 2};
+                case "27": case "37": case "70": 
+                    return {"color": "#fdb576", "fillColor": "#fdb576", "fillOpacity": 0.5, "weight": 2};
+                case "28": 
+                    return {"color": "#ffeede", "fillColor": "#ffeede", "fillOpacity": 0.5, "weight": 2};
+                case "30": case "108": 
+                    return {"color": "#fd9a4e", "fillColor": "#fd9a4e", "fillOpacity": 0.5, "weight": 2};
+                case "31": 
+                    return {"color": "#fda863", "fillColor": "#fda863", "fillOpacity": 0.5, "weight": 2};
+                case "32": 
+                    return {"color": "#feecd9", "fillColor": "#feecd9", "fillOpacity": 0.5, "weight": 2};
+                case "35": case "62": 
+                    return {"color": "#fd9446", "fillColor": "#fd9446", "fillOpacity": 0.5, "weight": 2};
+                case "36": 
+                    return {"color": "#ed6310", "fillColor": "#ed6310", "fillOpacity": 0.5, "weight": 2};
+                case "39": case "68": 
+                    return {"color": "#fdb678", "fillColor": "#fdb678", "fillOpacity": 0.5, "weight": 2};
+                case "40": case "52": case "60": case "129": 
+                    return {"color": "#fdd1a3", "fillColor": "#fdd1a3", "fillOpacity": 0.5, "weight": 2};
+                case "41": 
+                    return {"color": "#fee0c3", "fillColor": "#fee0c3", "fillOpacity": 0.5, "weight": 2};
+                case "43": case "69": case "73": case "97": case "98": case "105": 
+                    return {"color": "#fda762", "fillColor": "#fda762", "fillOpacity": 0.5, "weight": 2};
+                case "44": 
+                    return {"color": "#fd9344", "fillColor": "#fd9344", "fillOpacity": 0.5, "weight": 2};
+                case "45": case "65": 
+                    return {"color": "#fff5ea", "fillColor": "#fff5ea", "fillOpacity": 0.5, "weight": 2};
+                case "46": 
+                    return {"color": "#fd9f56", "fillColor": "#fd9f56", "fillOpacity": 0.5, "weight": 2};
+                case "47": 
+                    return {"color": "#fee1c4", "fillColor": "#fee1c4", "fillOpacity": 0.5, "weight": 2};
+                case "48": 
+                    return {"color": "#f4721e", "fillColor": "#f4721e", "fillOpacity": 0.5, "weight": 2};
+                case "49": 
+                    return {"color": "#e05206", "fillColor": "#e05206", "fillOpacity": 0.5, "weight": 2};
+                case "50": 
+                    return {"color": "#fda660", "fillColor": "#fda660", "fillOpacity": 0.5, "weight": 2};
+                case "53": 
+                    return {"color": "#f67723", "fillColor": "#f67723", "fillOpacity": 0.5, "weight": 2};
+                case "54": 
+                    return {"color": "#e95e0d", "fillColor": "#e95e0d", "fillOpacity": 0.5, "weight": 2};
+                case "55": case "78": case "127": 
+                    return {"color": "#fdb77a", "fillColor": "#fdb77a", "fillOpacity": 0.5, "weight": 2};
+                case "56": case "66": 
+                    return {"color": "#f77a27", "fillColor": "#f77a27", "fillOpacity": 0.5, "weight": 2};
+                case "61": 
+                    return {"color": "#df5106", "fillColor": "#df5106", "fillOpacity": 0.5, "weight": 2};
+                case "63": 
+                    return {"color": "#fee3c8", "fillColor": "#fee3c8", "fillOpacity": 0.5, "weight": 2};
+                case "64": 
+                    return {"color": "#e45709", "fillColor": "#e45709", "fillOpacity": 0.5, "weight": 2};
+                case "67": 
+                    return {"color": "#fdaf6c", "fillColor": "#fdaf6c", "fillOpacity": 0.5, "weight": 2};
+                case "71": 
+                    return {"color": "#7f2704", "fillColor": "#7f2704", "fillOpacity": 0.5, "weight": 2};
+                case "72": 
+                    return {"color": "#fedebd", "fillColor": "#fedebd", "fillOpacity": 0.5, "weight": 2};
+                case "74": 
+                    return {"color": "#fdc997", "fillColor": "#fdc997", "fillOpacity": 0.5, "weight": 2};
+                case "76": 
+                    return {"color": "#ee6511", "fillColor": "#ee6511", "fillOpacity": 0.5, "weight": 2};
+                case "77": 
+                    return {"color": "#fda45d", "fillColor": "#fda45d", "fillOpacity": 0.5, "weight": 2};
+                case "79": 
+                    return {"color": "#f26c16", "fillColor": "#f26c16", "fillOpacity": 0.5, "weight": 2};
+                case "80": 
+                    return {"color": "#fff3e6", "fillColor": "#fff3e6", "fillOpacity": 0.5, "weight": 2};
+                case "81": 
+                    return {"color": "#fd9040", "fillColor": "#fd9040", "fillOpacity": 0.5, "weight": 2};
+                case "82": 
+                    return {"color": "#f36f1a", "fillColor": "#f36f1a", "fillOpacity": 0.5, "weight": 2};
+                case "85": case "109": case "122": 
+                    return {"color": "#fedebf", "fillColor": "#fedebf", "fillOpacity": 0.5, "weight": 2};
+                case "86": 
+                    return {"color": "#fd9b50", "fillColor": "#fd9b50", "fillOpacity": 0.5, "weight": 2};
+                case "87": 
+                    return {"color": "#ec620f", "fillColor": "#ec620f", "fillOpacity": 0.5, "weight": 2};
+                case "88": 
+                    return {"color": "#fc8a39", "fillColor": "#fc8a39", "fillOpacity": 0.5, "weight": 2};
+                case "89": 
+                    return {"color": "#fd974a", "fillColor": "#fd974a", "fillOpacity": 0.5, "weight": 2};
+                case "90": 
+                    return {"color": "#feead6", "fillColor": "#feead6", "fillOpacity": 0.5, "weight": 2};
+                case "91": case "100": 
+                    return {"color": "#f9812e", "fillColor": "#f9812e", "fillOpacity": 0.5, "weight": 2};
+                case "92": 
+                    return {"color": "#f77b28", "fillColor": "#f77b28", "fillOpacity": 0.5, "weight": 2};
+                case "93": 
+                    return {"color": "#fdca99", "fillColor": "#fdca99", "fillOpacity": 0.5, "weight": 2};
+                case "94": 
+                    return {"color": "#fdd0a2", "fillColor": "#fdd0a2", "fillOpacity": 0.5, "weight": 2};
+                case "95": 
+                    return {"color": "#d64701", "fillColor": "#d64701", "fillOpacity": 0.5, "weight": 2};
+                case "101": 
+                    return {"color": "#fda35c", "fillColor": "#fda35c", "fillOpacity": 0.5, "weight": 2};
+                case "102": 
+                    return {"color": "#a43503", "fillColor": "#a43503", "fillOpacity": 0.5, "weight": 2};
+                case "103": 
+                    return {"color": "#fee7d1", "fillColor": "#fee7d1", "fillOpacity": 0.5, "weight": 2};
+                case "104": 
+                    return {"color": "#e35608", "fillColor": "#e35608", "fillOpacity": 0.5, "weight": 2};
+                case "107": 
+                    return {"color": "#fd9649", "fillColor": "#fd9649", "fillOpacity": 0.5, "weight": 2};
+                case "110": 
+                    return {"color": "#feeddc", "fillColor": "#feeddc", "fillOpacity": 0.5, "weight": 2};
+                case "111": case "112": 
+                    return {"color": "#fdad69", "fillColor": "#fdad69", "fillOpacity": 0.5, "weight": 2};
+                case "113": 
+                    return {"color": "#fff2e5", "fillColor": "#fff2e5", "fillOpacity": 0.5, "weight": 2};
+                case "114": 
+                    return {"color": "#fd994d", "fillColor": "#fd994d", "fillOpacity": 0.5, "weight": 2};
+                case "118": 
+                    return {"color": "#fdc48f", "fillColor": "#fdc48f", "fillOpacity": 0.5, "weight": 2};
+                case "119": 
+                    return {"color": "#fdbd83", "fillColor": "#fdbd83", "fillOpacity": 0.5, "weight": 2};
+                case "120": 
+                    return {"color": "#fdd5ab", "fillColor": "#fdd5ab", "fillOpacity": 0.5, "weight": 2};
+                case "121": 
+                    return {"color": "#fdab66", "fillColor": "#fdab66", "fillOpacity": 0.5, "weight": 2};
+                case "123": 
+                    return {"color": "#fdcfa0", "fillColor": "#fdcfa0", "fillOpacity": 0.5, "weight": 2};
+                case "124": 
+                    return {"color": "#fee2c7", "fillColor": "#fee2c7", "fillOpacity": 0.5, "weight": 2};
+                case "126": 
+                    return {"color": "#fdb97d", "fillColor": "#fdb97d", "fillOpacity": 0.5, "weight": 2};
+                case "128": 
+                    return {"color": "#f36e19", "fillColor": "#f36e19", "fillOpacity": 0.5, "weight": 2};
+                default:
+                    return {"color": "#f16813", "fillColor": "#f16813", "fillOpacity": 0.5, "weight": 2};
+            }
+        }
+        function geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_highlighter(feature) {
+            switch(feature.id) {
+                default:
+                    return {"fillOpacity": 0.75};
+            }
+        }
+        function geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_pointToLayer(feature, latlng) {
+            var opts = {
+  "stroke": true,
+  "color": "#3388ff",
+  "weight": 3,
+  "opacity": 1.0,
+  "lineCap": "round",
+  "lineJoin": "round",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": true,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "bubblingMouseEvents": true,
+  "radius": 6,
+};
+            
+            let style = geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_styler(feature)
+            Object.assign(opts, style)
+            
+            return new L.CircleMarker(latlng, opts)
+        }
+
+        function geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_onEachFeature(feature, layer) {
+
+            layer.on({
+                mouseout: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                            geo_json_5b3bb47ac1a35170bf5701c4c05f63e7.resetStyle(e.target);
+                    }
+                },
+                mouseover: function(e) {
+                    if(typeof e.target.setStyle === "function"){
+                        const highlightStyle = geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_highlighter(e.target.feature)
+                        e.target.setStyle(highlightStyle);
+                    }
+                },
+            });
+        };
+        var geo_json_5b3bb47ac1a35170bf5701c4c05f63e7 = L.geoJson(null, {
+                onEachFeature: geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_onEachFeature,
+            
+                style: geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_styler,
+                pointToLayer: geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_pointToLayer,
+            ...{
+}
+        });
+
+        function geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_add (data) {
+            geo_json_5b3bb47ac1a35170bf5701c4c05f63e7
+                .addData(data);
+        }
+            geo_json_5b3bb47ac1a35170bf5701c4c05f63e7_add({"bbox": [17.785622, 50.616593, 18.020378, 50.767895], "features": [{"bbox": [17.906425, 50.675603, 17.906425, 50.675603], "geometry": {"coordinates": [17.906425, 50.675603], "type": "Point"}, "id": "0", "properties": {"__folium_color": "#f87f2c", "lat": 50.675603, "lon": 17.906425, "measured_at": "2026-10-01 08:36:00", "pm25": 23.5, "sensor_id": "PM-042"}, "type": "Feature"}, {"bbox": [17.919674, 50.632283, 17.919674, 50.632283], "geometry": {"coordinates": [17.919674, 50.632283], "type": "Point"}, "id": "1", "properties": {"__folium_color": "#fee6cf", "lat": 50.632283, "lon": 17.919674, "measured_at": "2026-10-01 08:22:00", "pm25": 12.4, "sensor_id": "PM-106"}, "type": "Feature"}, {"bbox": [18.020378, 50.635608, 18.020378, 50.635608], "geometry": {"coordinates": [18.020378, 50.635608], "type": "Point"}, "id": "2", "properties": {"__folium_color": "#fda965", "lat": 50.635608, "lon": 18.020378, "measured_at": "2026-10-01 08:24:00", "pm25": 19.4, "sensor_id": "PM-130"}, "type": "Feature"}, {"bbox": [17.938766, 50.676438, 17.938766, 50.676438], "geometry": {"coordinates": [17.938766, 50.676438], "type": "Point"}, "id": "3", "properties": {"__folium_color": "#fdc590", "lat": 50.676438, "lon": 17.938766, "measured_at": "2026-10-01 08:13:00", "pm25": 16.8, "sensor_id": "PM-025"}, "type": "Feature"}, {"bbox": [17.87351, 50.677587, 17.87351, 50.677587], "geometry": {"coordinates": [17.87351, 50.677587], "type": "Point"}, "id": "4", "properties": {"__folium_color": "#fdd9b4", "lat": 50.677587, "lon": 17.87351, "measured_at": "2026-10-01 08:06:00", "pm25": 14.4, "sensor_id": "PM-137"}, "type": "Feature"}, {"bbox": [17.940071, 50.666829, 17.940071, 50.666829], "geometry": {"coordinates": [17.940071, 50.666829], "type": "Point"}, "id": "5", "properties": {"__folium_color": "#f87d29", "lat": 50.666829, "lon": 17.940071, "measured_at": "2026-10-01 08:23:00", "pm25": 23.7, "sensor_id": "PM-036"}, "type": "Feature"}, {"bbox": [17.802222, 50.694328, 17.802222, 50.694328], "geometry": {"coordinates": [17.802222, 50.694328], "type": "Point"}, "id": "6", "properties": {"__folium_color": "#fee6ce", "lat": 50.694328, "lon": 17.802222, "measured_at": "2026-10-01 08:56:00", "pm25": 12.5, "sensor_id": "PM-100"}, "type": "Feature"}, {"bbox": [17.794548, 50.684393, 17.794548, 50.684393], "geometry": {"coordinates": [17.794548, 50.684393], "type": "Point"}, "id": "7", "properties": {"__folium_color": "#fff5eb", "lat": 50.684393, "lon": 17.794548, "measured_at": "2026-10-01 08:09:00", "pm25": 9.3, "sensor_id": "PM-092"}, "type": "Feature"}, {"bbox": [17.919161, 50.730915, 17.919161, 50.730915], "geometry": {"coordinates": [17.919161, 50.730915], "type": "Point"}, "id": "8", "properties": {"__folium_color": "#feebd7", "lat": 50.730915, "lon": 17.919161, "measured_at": "2026-10-01 08:30:00", "pm25": 11.5, "sensor_id": "PM-122"}, "type": "Feature"}, {"bbox": [17.877113, 50.646712, 17.877113, 50.646712], "geometry": {"coordinates": [17.877113, 50.646712], "type": "Point"}, "id": "9", "properties": {"__folium_color": "#fdd3a7", "lat": 50.646712, "lon": 17.877113, "measured_at": "2026-10-01 08:49:00", "pm25": 15.4, "sensor_id": "PM-090"}, "type": "Feature"}, {"bbox": [17.928074, 50.669782, 17.928074, 50.669782], "geometry": {"coordinates": [17.928074, 50.669782], "type": "Point"}, "id": "10", "properties": {"__folium_color": "#c34002", "lat": 50.669782, "lon": 17.928074, "measured_at": "2026-10-01 08:07:00", "pm25": 30.2, "sensor_id": "PM-098"}, "type": "Feature"}, {"bbox": [17.867966, 50.736104, 17.867966, 50.736104], "geometry": {"coordinates": [17.867966, 50.736104], "type": "Point"}, "id": "11", "properties": {"__folium_color": "#fddbb8", "lat": 50.736104, "lon": 17.867966, "measured_at": "2026-10-01 08:57:00", "pm25": 14.1, "sensor_id": "PM-126"}, "type": "Feature"}, {"bbox": [17.957928, 50.678739, 17.957928, 50.678739], "geometry": {"coordinates": [17.957928, 50.678739], "type": "Point"}, "id": "12", "properties": {"__folium_color": "#fdd2a6", "lat": 50.678739, "lon": 17.957928, "measured_at": "2026-10-01 08:49:00", "pm25": 15.5, "sensor_id": "PM-004"}, "type": "Feature"}, {"bbox": [17.868868, 50.703609, 17.868868, 50.703609], "geometry": {"coordinates": [17.868868, 50.703609], "type": "Point"}, "id": "13", "properties": {"__folium_color": "#fee4ca", "lat": 50.703609, "lon": 17.868868, "measured_at": "2026-10-01 08:31:00", "pm25": 12.8, "sensor_id": "PM-110"}, "type": "Feature"}, {"bbox": [17.906348, 50.652446, 17.906348, 50.652446], "geometry": {"coordinates": [17.906348, 50.652446], "type": "Point"}, "id": "14", "properties": {"__folium_color": "#f57622", "lat": 50.652446, "lon": 17.906348, "measured_at": "2026-10-01 08:46:00", "pm25": 24.3, "sensor_id": "PM-075"}, "type": "Feature"}, {"bbox": [17.874249, 50.66953, 17.874249, 50.66953], "geometry": {"coordinates": [17.874249, 50.66953], "type": "Point"}, "id": "15", "properties": {"__folium_color": "#fdbb81", "lat": 50.66953, "lon": 17.874249, "measured_at": "2026-10-01 08:43:00", "pm25": 17.7, "sensor_id": "PM-003"}, "type": "Feature"}, {"bbox": [17.919072, 50.656702, 17.919072, 50.656702], "geometry": {"coordinates": [17.919072, 50.656702], "type": "Point"}, "id": "16", "properties": {"__folium_color": "#f5741f", "lat": 50.656702, "lon": 17.919072, "measured_at": "2026-10-01 08:43:00", "pm25": 24.5, "sensor_id": "PM-024"}, "type": "Feature"}, {"bbox": [17.896128, 50.643418, 17.896128, 50.643418], "geometry": {"coordinates": [17.896128, 50.643418], "type": "Point"}, "id": "17", "properties": {"__folium_color": "#fdd9b4", "lat": 50.643418, "lon": 17.896128, "measured_at": "2026-10-01 08:53:00", "pm25": 14.4, "sensor_id": "PM-133"}, "type": "Feature"}, {"bbox": [17.895572, 50.697548, 17.895572, 50.697548], "geometry": {"coordinates": [17.895572, 50.697548], "type": "Point"}, "id": "18", "properties": {"__folium_color": "#fdd9b4", "lat": 50.697548, "lon": 17.895572, "measured_at": "2026-10-01 08:43:00", "pm25": 14.5, "sensor_id": "PM-111"}, "type": "Feature"}, {"bbox": [17.94087, 50.671117, 17.94087, 50.671117], "geometry": {"coordinates": [17.94087, 50.671117], "type": "Point"}, "id": "19", "properties": {"__folium_color": "#f87e2b", "lat": 50.671117, "lon": 17.94087, "measured_at": "2026-10-01 08:47:00", "pm25": 23.6, "sensor_id": "PM-046"}, "type": "Feature"}, {"bbox": [17.969461, 50.651146, 17.969461, 50.651146], "geometry": {"coordinates": [17.969461, 50.651146], "type": "Point"}, "id": "20", "properties": {"__folium_color": "#fdbb81", "lat": 50.651146, "lon": 17.969461, "measured_at": "2026-10-01 08:28:00", "pm25": 17.7, "sensor_id": "PM-026"}, "type": "Feature"}, {"bbox": [17.880497, 50.759923, 17.880497, 50.759923], "geometry": {"coordinates": [17.880497, 50.759923], "type": "Point"}, "id": "21", "properties": {"__folium_color": "#fd8c3b", "lat": 50.759923, "lon": 17.880497, "measured_at": "2026-10-01 08:38:00", "pm25": 22.3, "sensor_id": "PM-124"}, "type": "Feature"}, {"bbox": [17.907414, 50.67108, 17.907414, 50.67108], "geometry": {"coordinates": [17.907414, 50.67108], "type": "Point"}, "id": "22", "properties": {"__folium_color": "#fdc692", "lat": 50.67108, "lon": 17.907414, "measured_at": "2026-10-01 08:15:00", "pm25": 16.7, "sensor_id": "PM-065"}, "type": "Feature"}, {"bbox": [17.918011, 50.689868, 17.918011, 50.689868], "geometry": {"coordinates": [17.918011, 50.689868], "type": "Point"}, "id": "23", "properties": {"__folium_color": "#fd9547", "lat": 50.689868, "lon": 17.918011, "measured_at": "2026-10-01 08:43:00", "pm25": 21.5, "sensor_id": "PM-112"}, "type": "Feature"}, {"bbox": [17.920215, 50.70084, 17.920215, 50.70084], "geometry": {"coordinates": [17.920215, 50.70084], "type": "Point"}, "id": "24", "properties": {"__folium_color": "#feddbc", "lat": 50.70084, "lon": 17.920215, "measured_at": "2026-10-01 08:35:00", "pm25": 13.8, "sensor_id": "PM-013"}, "type": "Feature"}, {"bbox": [17.917054, 50.692112, 17.917054, 50.692112], "geometry": {"coordinates": [17.917054, 50.692112], "type": "Point"}, "id": "25", "properties": {"__folium_color": "#fda25a", "lat": 50.692112, "lon": 17.917054, "measured_at": "2026-10-01 08:37:00", "pm25": 20.2, "sensor_id": "PM-085"}, "type": "Feature"}, {"bbox": [17.922643, 50.642122, 17.922643, 50.642122], "geometry": {"coordinates": [17.922643, 50.642122], "type": "Point"}, "id": "26", "properties": {"__folium_color": "#fdb06e", "lat": 50.642122, "lon": 17.922643, "measured_at": "2026-10-01 08:19:00", "pm25": 18.8, "sensor_id": "PM-055"}, "type": "Feature"}, {"bbox": [17.961769, 50.685311, 17.961769, 50.685311], "geometry": {"coordinates": [17.961769, 50.685311], "type": "Point"}, "id": "27", "properties": {"__folium_color": "#fdb576", "lat": 50.685311, "lon": 17.961769, "measured_at": "2026-10-01 08:31:00", "pm25": 18.3, "sensor_id": "PM-102"}, "type": "Feature"}, {"bbox": [18.007906, 50.637427, 18.007906, 50.637427], "geometry": {"coordinates": [18.007906, 50.637427], "type": "Point"}, "id": "28", "properties": {"__folium_color": "#ffeede", "lat": 50.637427, "lon": 18.007906, "measured_at": "2026-10-01 08:00:00", "pm25": 10.7, "sensor_id": "PM-128"}, "type": "Feature"}, {"bbox": [17.926216, 50.689299, 17.926216, 50.689299], "geometry": {"coordinates": [17.926216, 50.689299], "type": "Point"}, "id": "29", "properties": {"__folium_color": "#fdbb81", "lat": 50.689299, "lon": 17.926216, "measured_at": "2026-10-01 08:16:00", "pm25": 17.7, "sensor_id": "PM-015"}, "type": "Feature"}, {"bbox": [17.987781, 50.669582, 17.987781, 50.669582], "geometry": {"coordinates": [17.987781, 50.669582], "type": "Point"}, "id": "30", "properties": {"__folium_color": "#fd9a4e", "lat": 50.669582, "lon": 17.987781, "measured_at": "2026-10-01 08:27:00", "pm25": 21.0, "sensor_id": "PM-049"}, "type": "Feature"}, {"bbox": [17.910865, 50.687786, 17.910865, 50.687786], "geometry": {"coordinates": [17.910865, 50.687786], "type": "Point"}, "id": "31", "properties": {"__folium_color": "#fda863", "lat": 50.687786, "lon": 17.910865, "measured_at": "2026-10-01 08:52:00", "pm25": 19.5, "sensor_id": "PM-054"}, "type": "Feature"}, {"bbox": [17.835639, 50.690203, 17.835639, 50.690203], "geometry": {"coordinates": [17.835639, 50.690203], "type": "Point"}, "id": "32", "properties": {"__folium_color": "#feecd9", "lat": 50.690203, "lon": 17.835639, "measured_at": "2026-10-01 08:54:00", "pm25": 11.3, "sensor_id": "PM-093"}, "type": "Feature"}, {"bbox": [17.87455, 50.767895, 17.87455, 50.767895], "geometry": {"coordinates": [17.87455, 50.767895], "type": "Point"}, "id": "33", "properties": {"__folium_color": "#fdd9b4", "lat": 50.767895, "lon": 17.87455, "measured_at": "2026-10-01 08:43:00", "pm25": 14.4, "sensor_id": "PM-119"}, "type": "Feature"}, {"bbox": [17.833863, 50.698052, 17.833863, 50.698052], "geometry": {"coordinates": [17.833863, 50.698052], "type": "Point"}, "id": "34", "properties": {"__folium_color": "#fee6cf", "lat": 50.698052, "lon": 17.833863, "measured_at": "2026-10-01 08:39:00", "pm25": 12.4, "sensor_id": "PM-139"}, "type": "Feature"}, {"bbox": [17.904218, 50.670679, 17.904218, 50.670679], "geometry": {"coordinates": [17.904218, 50.670679], "type": "Point"}, "id": "35", "properties": {"__folium_color": "#fd9446", "lat": 50.670679, "lon": 17.904218, "measured_at": "2026-10-01 08:34:00", "pm25": 21.6, "sensor_id": "PM-079"}, "type": "Feature"}, {"bbox": [17.935747, 50.666663, 17.935747, 50.666663], "geometry": {"coordinates": [17.935747, 50.666663], "type": "Point"}, "id": "36", "properties": {"__folium_color": "#ed6310", "lat": 50.666663, "lon": 17.935747, "measured_at": "2026-10-01 08:39:00", "pm25": 26.1, "sensor_id": "PM-012"}, "type": "Feature"}, {"bbox": [17.938264, 50.644591, 17.938264, 50.644591], "geometry": {"coordinates": [17.938264, 50.644591], "type": "Point"}, "id": "37", "properties": {"__folium_color": "#fdb576", "lat": 50.644591, "lon": 17.938264, "measured_at": "2026-10-01 08:41:00", "pm25": 18.3, "sensor_id": "PM-045"}, "type": "Feature"}, {"bbox": [17.890993, 50.679436, 17.890993, 50.679436], "geometry": {"coordinates": [17.890993, 50.679436], "type": "Point"}, "id": "38", "properties": {"__folium_color": "#fd8c3b", "lat": 50.679436, "lon": 17.890993, "measured_at": "2026-10-01 08:30:00", "pm25": 22.3, "sensor_id": "PM-029"}, "type": "Feature"}, {"bbox": [17.941147, 50.697984, 17.941147, 50.697984], "geometry": {"coordinates": [17.941147, 50.697984], "type": "Point"}, "id": "39", "properties": {"__folium_color": "#fdb678", "lat": 50.697984, "lon": 17.941147, "measured_at": "2026-10-01 08:54:00", "pm25": 18.2, "sensor_id": "PM-121"}, "type": "Feature"}, {"bbox": [17.902973, 50.643139, 17.902973, 50.643139], "geometry": {"coordinates": [17.902973, 50.643139], "type": "Point"}, "id": "40", "properties": {"__folium_color": "#fdd1a3", "lat": 50.643139, "lon": 17.902973, "measured_at": "2026-10-01 08:08:00", "pm25": 15.7, "sensor_id": "PM-001"}, "type": "Feature"}, {"bbox": [17.957364, 50.649453, 17.957364, 50.649453], "geometry": {"coordinates": [17.957364, 50.649453], "type": "Point"}, "id": "41", "properties": {"__folium_color": "#fee0c3", "lat": 50.649453, "lon": 17.957364, "measured_at": "2026-10-01 08:47:00", "pm25": 13.3, "sensor_id": "PM-028"}, "type": "Feature"}, {"bbox": [17.90933, 50.67007, 17.90933, 50.67007], "geometry": {"coordinates": [17.90933, 50.67007], "type": "Point"}, "id": "42", "properties": {"__folium_color": "#f87f2c", "lat": 50.67007, "lon": 17.90933, "measured_at": "2026-10-01 08:16:00", "pm25": 23.5, "sensor_id": "PM-037"}, "type": "Feature"}, {"bbox": [17.867297, 50.65174, 17.867297, 50.65174], "geometry": {"coordinates": [17.867297, 50.65174], "type": "Point"}, "id": "43", "properties": {"__folium_color": "#fda762", "lat": 50.65174, "lon": 17.867297, "measured_at": "2026-10-01 08:49:00", "pm25": 19.7, "sensor_id": "PM-107"}, "type": "Feature"}, {"bbox": [17.9107, 50.656832, 17.9107, 50.656832], "geometry": {"coordinates": [17.9107, 50.656832], "type": "Point"}, "id": "44", "properties": {"__folium_color": "#fd9344", "lat": 50.656832, "lon": 17.9107, "measured_at": "2026-10-01 08:56:00", "pm25": 21.7, "sensor_id": "PM-021"}, "type": "Feature"}, {"bbox": [17.976405, 50.616593, 17.976405, 50.616593], "geometry": {"coordinates": [17.976405, 50.616593], "type": "Point"}, "id": "45", "properties": {"__folium_color": "#fff5ea", "lat": 50.616593, "lon": 17.976405, "measured_at": "2026-10-01 08:54:00", "pm25": 9.4, "sensor_id": "PM-136"}, "type": "Feature"}, {"bbox": [17.925747, 50.658593, 17.925747, 50.658593], "geometry": {"coordinates": [17.925747, 50.658593], "type": "Point"}, "id": "46", "properties": {"__folium_color": "#fd9f56", "lat": 50.658593, "lon": 17.925747, "measured_at": "2026-10-01 08:48:00", "pm25": 20.5, "sensor_id": "PM-118"}, "type": "Feature"}, {"bbox": [17.867747, 50.726836, 17.867747, 50.726836], "geometry": {"coordinates": [17.867747, 50.726836], "type": "Point"}, "id": "47", "properties": {"__folium_color": "#fee1c4", "lat": 50.726836, "lon": 17.867747, "measured_at": "2026-10-01 08:13:00", "pm25": 13.2, "sensor_id": "PM-101"}, "type": "Feature"}, {"bbox": [17.901134, 50.655872, 17.901134, 50.655872], "geometry": {"coordinates": [17.901134, 50.655872], "type": "Point"}, "id": "48", "properties": {"__folium_color": "#f4721e", "lat": 50.655872, "lon": 17.901134, "measured_at": "2026-10-01 08:06:00", "pm25": 24.6, "sensor_id": "PM-086"}, "type": "Feature"}, {"bbox": [17.920552, 50.662432, 17.920552, 50.662432], "geometry": {"coordinates": [17.920552, 50.662432], "type": "Point"}, "id": "49", "properties": {"__folium_color": "#e05206", "lat": 50.662432, "lon": 17.920552, "measured_at": "2026-10-01 08:05:00", "pm25": 27.8, "sensor_id": "PM-014"}, "type": "Feature"}, {"bbox": [17.892247, 50.691633, 17.892247, 50.691633], "geometry": {"coordinates": [17.892247, 50.691633], "type": "Point"}, "id": "50", "properties": {"__folium_color": "#fda660", "lat": 50.691633, "lon": 17.892247, "measured_at": "2026-10-01 08:30:00", "pm25": 19.8, "sensor_id": "PM-031"}, "type": "Feature"}, {"bbox": [17.986447, 50.625584, 17.986447, 50.625584], "geometry": {"coordinates": [17.986447, 50.625584], "type": "Point"}, "id": "51", "properties": {"__folium_color": "#fddbb8", "lat": 50.625584, "lon": 17.986447, "measured_at": "2026-10-01 08:57:00", "pm25": 14.1, "sensor_id": "PM-097"}, "type": "Feature"}, {"bbox": [17.909392, 50.699848, 17.909392, 50.699848], "geometry": {"coordinates": [17.909392, 50.699848], "type": "Point"}, "id": "52", "properties": {"__folium_color": "#fdd1a3", "lat": 50.699848, "lon": 17.909392, "measured_at": "2026-10-01 08:40:00", "pm25": 15.7, "sensor_id": "PM-131"}, "type": "Feature"}, {"bbox": [17.891025, 50.67397, 17.891025, 50.67397], "geometry": {"coordinates": [17.891025, 50.67397], "type": "Point"}, "id": "53", "properties": {"__folium_color": "#f67723", "lat": 50.67397, "lon": 17.891025, "measured_at": "2026-10-01 08:51:00", "pm25": 24.2, "sensor_id": "PM-083"}, "type": "Feature"}, {"bbox": [17.914477, 50.675676, 17.914477, 50.675676], "geometry": {"coordinates": [17.914477, 50.675676], "type": "Point"}, "id": "54", "properties": {"__folium_color": "#e95e0d", "lat": 50.675676, "lon": 17.914477, "measured_at": "2026-10-01 08:33:00", "pm25": 26.6, "sensor_id": "PM-007"}, "type": "Feature"}, {"bbox": [17.950677, 50.688698, 17.950677, 50.688698], "geometry": {"coordinates": [17.950677, 50.688698], "type": "Point"}, "id": "55", "properties": {"__folium_color": "#fdb77a", "lat": 50.688698, "lon": 17.950677, "measured_at": "2026-10-01 08:24:00", "pm25": 18.1, "sensor_id": "PM-072"}, "type": "Feature"}, {"bbox": [17.892126, 50.645518, 17.892126, 50.645518], "geometry": {"coordinates": [17.892126, 50.645518], "type": "Point"}, "id": "56", "properties": {"__folium_color": "#f77a27", "lat": 50.645518, "lon": 17.892126, "measured_at": "2026-10-01 08:54:00", "pm25": 23.9, "sensor_id": "PM-066"}, "type": "Feature"}, {"bbox": [17.925962, 50.716132, 17.925962, 50.716132], "geometry": {"coordinates": [17.925962, 50.716132], "type": "Point"}, "id": "57", "properties": {"__folium_color": "#fdd2a6", "lat": 50.716132, "lon": 17.925962, "measured_at": "2026-10-01 08:35:00", "pm25": 15.5, "sensor_id": "PM-030"}, "type": "Feature"}, {"bbox": [17.947814, 50.653409, 17.947814, 50.653409], "geometry": {"coordinates": [17.947814, 50.653409], "type": "Point"}, "id": "58", "properties": {"__folium_color": "#fd9547", "lat": 50.653409, "lon": 17.947814, "measured_at": "2026-10-01 08:22:00", "pm25": 21.5, "sensor_id": "PM-120"}, "type": "Feature"}, {"bbox": [17.938795, 50.691828, 17.938795, 50.691828], "geometry": {"coordinates": [17.938795, 50.691828], "type": "Point"}, "id": "59", "properties": {"__folium_color": "#fda965", "lat": 50.691828, "lon": 17.938795, "measured_at": "2026-10-01 08:32:00", "pm25": 19.4, "sensor_id": "PM-022"}, "type": "Feature"}, {"bbox": [17.896766, 50.699086, 17.896766, 50.699086], "geometry": {"coordinates": [17.896766, 50.699086], "type": "Point"}, "id": "60", "properties": {"__folium_color": "#fdd1a3", "lat": 50.699086, "lon": 17.896766, "measured_at": "2026-10-01 08:14:00", "pm25": 15.7, "sensor_id": "PM-060"}, "type": "Feature"}, {"bbox": [17.915447, 50.657392, 17.915447, 50.657392], "geometry": {"coordinates": [17.915447, 50.657392], "type": "Point"}, "id": "61", "properties": {"__folium_color": "#df5106", "lat": 50.657392, "lon": 17.915447, "measured_at": "2026-10-01 08:10:00", "pm25": 27.9, "sensor_id": "PM-056"}, "type": "Feature"}, {"bbox": [17.912131, 50.67596, 17.912131, 50.67596], "geometry": {"coordinates": [17.912131, 50.67596], "type": "Point"}, "id": "62", "properties": {"__folium_color": "#fd9446", "lat": 50.67596, "lon": 17.912131, "measured_at": "2026-10-01 08:55:00", "pm25": 21.6, "sensor_id": "PM-017"}, "type": "Feature"}, {"bbox": [17.810467, 50.707723, 17.810467, 50.707723], "geometry": {"coordinates": [17.810467, 50.707723], "type": "Point"}, "id": "63", "properties": {"__folium_color": "#fee3c8", "lat": 50.707723, "lon": 17.810467, "measured_at": "2026-10-01 08:38:00", "pm25": 12.9, "sensor_id": "PM-109"}, "type": "Feature"}, {"bbox": [17.937396, 50.676336, 17.937396, 50.676336], "geometry": {"coordinates": [17.937396, 50.676336], "type": "Point"}, "id": "64", "properties": {"__folium_color": "#e45709", "lat": 50.676336, "lon": 17.937396, "measured_at": "2026-10-01 08:03:00", "pm25": 27.3, "sensor_id": "PM-088"}, "type": "Feature"}, {"bbox": [17.856417, 50.715008, 17.856417, 50.715008], "geometry": {"coordinates": [17.856417, 50.715008], "type": "Point"}, "id": "65", "properties": {"__folium_color": "#fff5ea", "lat": 50.715008, "lon": 17.856417, "measured_at": "2026-10-01 08:04:00", "pm25": 9.4, "sensor_id": "PM-094"}, "type": "Feature"}, {"bbox": [17.919078, 50.676697, 17.919078, 50.676697], "geometry": {"coordinates": [17.919078, 50.676697], "type": "Point"}, "id": "66", "properties": {"__folium_color": "#f77a27", "lat": 50.676697, "lon": 17.919078, "measured_at": "2026-10-01 08:49:00", "pm25": 23.9, "sensor_id": "PM-019"}, "type": "Feature"}, {"bbox": [17.898308, 50.651917, 17.898308, 50.651917], "geometry": {"coordinates": [17.898308, 50.651917], "type": "Point"}, "id": "67", "properties": {"__folium_color": "#fdaf6c", "lat": 50.651917, "lon": 17.898308, "measured_at": "2026-10-01 08:01:00", "pm25": 18.9, "sensor_id": "PM-062"}, "type": "Feature"}, {"bbox": [17.932528, 50.649563, 17.932528, 50.649563], "geometry": {"coordinates": [17.932528, 50.649563], "type": "Point"}, "id": "68", "properties": {"__folium_color": "#fdb678", "lat": 50.649563, "lon": 17.932528, "measured_at": "2026-10-01 08:44:00", "pm25": 18.2, "sensor_id": "PM-082"}, "type": "Feature"}, {"bbox": [17.897191, 50.667951, 17.897191, 50.667951], "geometry": {"coordinates": [17.897191, 50.667951], "type": "Point"}, "id": "69", "properties": {"__folium_color": "#fda762", "lat": 50.667951, "lon": 17.897191, "measured_at": "2026-10-01 08:36:00", "pm25": 19.6, "sensor_id": "PM-132"}, "type": "Feature"}, {"bbox": [17.929137, 50.650177, 17.929137, 50.650177], "geometry": {"coordinates": [17.929137, 50.650177], "type": "Point"}, "id": "70", "properties": {"__folium_color": "#fdb576", "lat": 50.650177, "lon": 17.929137, "measured_at": "2026-10-01 08:53:00", "pm25": 18.3, "sensor_id": "PM-002"}, "type": "Feature"}, {"bbox": [17.92989, 50.665538, 17.92989, 50.665538], "geometry": {"coordinates": [17.92989, 50.665538], "type": "Point"}, "id": "71", "properties": {"__folium_color": "#7f2704", "lat": 50.665538, "lon": 17.92989, "measured_at": "2026-10-01 08:08:00", "pm25": 35.3, "sensor_id": "PM-057"}, "type": "Feature"}, {"bbox": [17.887301, 50.67993, 17.887301, 50.67993], "geometry": {"coordinates": [17.887301, 50.67993], "type": "Point"}, "id": "72", "properties": {"__folium_color": "#fedebd", "lat": 50.67993, "lon": 17.887301, "measured_at": "2026-10-01 08:02:00", "pm25": 13.7, "sensor_id": "PM-020"}, "type": "Feature"}, {"bbox": [17.962018, 50.645408, 17.962018, 50.645408], "geometry": {"coordinates": [17.962018, 50.645408], "type": "Point"}, "id": "73", "properties": {"__folium_color": "#fda762", "lat": 50.645408, "lon": 17.962018, "measured_at": "2026-10-01 08:19:00", "pm25": 19.7, "sensor_id": "PM-078"}, "type": "Feature"}, {"bbox": [17.971769, 50.641332, 17.971769, 50.641332], "geometry": {"coordinates": [17.971769, 50.641332], "type": "Point"}, "id": "74", "properties": {"__folium_color": "#fdc997", "lat": 50.641332, "lon": 17.971769, "measured_at": "2026-10-01 08:01:00", "pm25": 16.4, "sensor_id": "PM-115"}, "type": "Feature"}, {"bbox": [17.917202, 50.652516, 17.917202, 50.652516], "geometry": {"coordinates": [17.917202, 50.652516], "type": "Point"}, "id": "75", "properties": {"__folium_color": "#fda25a", "lat": 50.652516, "lon": 17.917202, "measured_at": "2026-10-01 08:19:00", "pm25": 20.2, "sensor_id": "PM-010"}, "type": "Feature"}, {"bbox": [17.896899, 50.674333, 17.896899, 50.674333], "geometry": {"coordinates": [17.896899, 50.674333], "type": "Point"}, "id": "76", "properties": {"__folium_color": "#ee6511", "lat": 50.674333, "lon": 17.896899, "measured_at": "2026-10-01 08:24:00", "pm25": 25.9, "sensor_id": "PM-061"}, "type": "Feature"}, {"bbox": [17.899594, 50.687066, 17.899594, 50.687066], "geometry": {"coordinates": [17.899594, 50.687066], "type": "Point"}, "id": "77", "properties": {"__folium_color": "#fda45d", "lat": 50.687066, "lon": 17.899594, "measured_at": "2026-10-01 08:15:00", "pm25": 20.0, "sensor_id": "PM-035"}, "type": "Feature"}, {"bbox": [17.927101, 50.699142, 17.927101, 50.699142], "geometry": {"coordinates": [17.927101, 50.699142], "type": "Point"}, "id": "78", "properties": {"__folium_color": "#fdb77a", "lat": 50.699142, "lon": 17.927101, "measured_at": "2026-10-01 08:22:00", "pm25": 18.1, "sensor_id": "PM-041"}, "type": "Feature"}, {"bbox": [17.941139, 50.659559, 17.941139, 50.659559], "geometry": {"coordinates": [17.941139, 50.659559], "type": "Point"}, "id": "79", "properties": {"__folium_color": "#f26c16", "lat": 50.659559, "lon": 17.941139, "measured_at": "2026-10-01 08:57:00", "pm25": 25.3, "sensor_id": "PM-011"}, "type": "Feature"}, {"bbox": [17.931019, 50.75465, 17.931019, 50.75465], "geometry": {"coordinates": [17.931019, 50.75465], "type": "Point"}, "id": "80", "properties": {"__folium_color": "#fff3e6", "lat": 50.75465, "lon": 17.931019, "measured_at": "2026-10-01 08:52:00", "pm25": 9.8, "sensor_id": "PM-127"}, "type": "Feature"}, {"bbox": [17.904397, 50.669467, 17.904397, 50.669467], "geometry": {"coordinates": [17.904397, 50.669467], "type": "Point"}, "id": "81", "properties": {"__folium_color": "#fd9040", "lat": 50.669467, "lon": 17.904397, "measured_at": "2026-10-01 08:35:00", "pm25": 22.0, "sensor_id": "PM-027"}, "type": "Feature"}, {"bbox": [17.90867, 50.658372, 17.90867, 50.658372], "geometry": {"coordinates": [17.90867, 50.658372], "type": "Point"}, "id": "82", "properties": {"__folium_color": "#f36f1a", "lat": 50.658372, "lon": 17.90867, "measured_at": "2026-10-01 08:15:00", "pm25": 25.0, "sensor_id": "PM-059"}, "type": "Feature"}, {"bbox": [17.785622, 50.685813, 17.785622, 50.685813], "geometry": {"coordinates": [17.785622, 50.685813], "type": "Point"}, "id": "83", "properties": {"__folium_color": "#feddbc", "lat": 50.685813, "lon": 17.785622, "measured_at": "2026-10-01 08:17:00", "pm25": 13.8, "sensor_id": "PM-113"}, "type": "Feature"}, {"bbox": [17.899409, 50.665096, 17.899409, 50.665096], "geometry": {"coordinates": [17.899409, 50.665096], "type": "Point"}, "id": "84", "properties": {"__folium_color": "#f87e2b", "lat": 50.665096, "lon": 17.899409, "measured_at": "2026-10-01 08:13:00", "pm25": 23.6, "sensor_id": "PM-063"}, "type": "Feature"}, {"bbox": [17.930154, 50.703034, 17.930154, 50.703034], "geometry": {"coordinates": [17.930154, 50.703034], "type": "Point"}, "id": "85", "properties": {"__folium_color": "#fedebf", "lat": 50.703034, "lon": 17.930154, "measured_at": "2026-10-01 08:02:00", "pm25": 13.6, "sensor_id": "PM-140"}, "type": "Feature"}, {"bbox": [17.95547, 50.665829, 17.95547, 50.665829], "geometry": {"coordinates": [17.95547, 50.665829], "type": "Point"}, "id": "86", "properties": {"__folium_color": "#fd9b50", "lat": 50.665829, "lon": 17.95547, "measured_at": "2026-10-01 08:00:00", "pm25": 20.9, "sensor_id": "PM-058"}, "type": "Feature"}, {"bbox": [17.91854, 50.675156, 17.91854, 50.675156], "geometry": {"coordinates": [17.91854, 50.675156], "type": "Point"}, "id": "87", "properties": {"__folium_color": "#ec620f", "lat": 50.675156, "lon": 17.91854, "measured_at": "2026-10-01 08:21:00", "pm25": 26.2, "sensor_id": "PM-074"}, "type": "Feature"}, {"bbox": [17.901289, 50.679636, 17.901289, 50.679636], "geometry": {"coordinates": [17.901289, 50.679636], "type": "Point"}, "id": "88", "properties": {"__folium_color": "#fc8a39", "lat": 50.679636, "lon": 17.901289, "measured_at": "2026-10-01 08:26:00", "pm25": 22.5, "sensor_id": "PM-043"}, "type": "Feature"}, {"bbox": [17.936317, 50.679258, 17.936317, 50.679258], "geometry": {"coordinates": [17.936317, 50.679258], "type": "Point"}, "id": "89", "properties": {"__folium_color": "#fd974a", "lat": 50.679258, "lon": 17.936317, "measured_at": "2026-10-01 08:24:00", "pm25": 21.3, "sensor_id": "PM-018"}, "type": "Feature"}, {"bbox": [17.872877, 50.760114, 17.872877, 50.760114], "geometry": {"coordinates": [17.872877, 50.760114], "type": "Point"}, "id": "90", "properties": {"__folium_color": "#feead6", "lat": 50.760114, "lon": 17.872877, "measured_at": "2026-10-01 08:45:00", "pm25": 11.6, "sensor_id": "PM-099"}, "type": "Feature"}, {"bbox": [17.916071, 50.655463, 17.916071, 50.655463], "geometry": {"coordinates": [17.916071, 50.655463], "type": "Point"}, "id": "91", "properties": {"__folium_color": "#f9812e", "lat": 50.655463, "lon": 17.916071, "measured_at": "2026-10-01 08:09:00", "pm25": 23.3, "sensor_id": "PM-009"}, "type": "Feature"}, {"bbox": [17.924343, 50.654879, 17.924343, 50.654879], "geometry": {"coordinates": [17.924343, 50.654879], "type": "Point"}, "id": "92", "properties": {"__folium_color": "#f77b28", "lat": 50.654879, "lon": 17.924343, "measured_at": "2026-10-01 08:28:00", "pm25": 23.8, "sensor_id": "PM-116"}, "type": "Feature"}, {"bbox": [17.945604, 50.63838, 17.945604, 50.63838], "geometry": {"coordinates": [17.945604, 50.63838], "type": "Point"}, "id": "93", "properties": {"__folium_color": "#fdca99", "lat": 50.63838, "lon": 17.945604, "measured_at": "2026-10-01 08:27:00", "pm25": 16.3, "sensor_id": "PM-040"}, "type": "Feature"}, {"bbox": [17.963892, 50.665552, 17.963892, 50.665552], "geometry": {"coordinates": [17.963892, 50.665552], "type": "Point"}, "id": "94", "properties": {"__folium_color": "#fdd0a2", "lat": 50.665552, "lon": 17.963892, "measured_at": "2026-10-01 08:32:00", "pm25": 15.8, "sensor_id": "PM-050"}, "type": "Feature"}, {"bbox": [17.923944, 50.6732, 17.923944, 50.6732], "geometry": {"coordinates": [17.923944, 50.6732], "type": "Point"}, "id": "95", "properties": {"__folium_color": "#d64701", "lat": 50.6732, "lon": 17.923944, "measured_at": "2026-10-01 08:01:00", "pm25": 28.9, "sensor_id": "PM-080"}, "type": "Feature"}, {"bbox": [17.830513, 50.707533, 17.830513, 50.707533], "geometry": {"coordinates": [17.830513, 50.707533], "type": "Point"}, "id": "96", "properties": {"__folium_color": "#fee4ca", "lat": 50.707533, "lon": 17.830513, "measured_at": "2026-10-01 08:37:00", "pm25": 12.8, "sensor_id": "PM-135"}, "type": "Feature"}, {"bbox": [17.993894, 50.666372, 17.993894, 50.666372], "geometry": {"coordinates": [17.993894, 50.666372], "type": "Point"}, "id": "97", "properties": {"__folium_color": "#fda762", "lat": 50.666372, "lon": 17.993894, "measured_at": "2026-10-01 08:15:00", "pm25": 19.7, "sensor_id": "PM-129"}, "type": "Feature"}, {"bbox": [17.943951, 50.655758, 17.943951, 50.655758], "geometry": {"coordinates": [17.943951, 50.655758], "type": "Point"}, "id": "98", "properties": {"__folium_color": "#fda762", "lat": 50.655758, "lon": 17.943951, "measured_at": "2026-10-01 08:08:00", "pm25": 19.6, "sensor_id": "PM-051"}, "type": "Feature"}, {"bbox": [17.917862, 50.677583, 17.917862, 50.677583], "geometry": {"coordinates": [17.917862, 50.677583], "type": "Point"}, "id": "99", "properties": {"__folium_color": "#f16813", "lat": 50.677583, "lon": 17.917862, "measured_at": "2026-10-01 08:42:00", "pm25": 25.6, "sensor_id": "PM-077"}, "type": "Feature"}, {"bbox": [17.947931, 50.668434, 17.947931, 50.668434], "geometry": {"coordinates": [17.947931, 50.668434], "type": "Point"}, "id": "100", "properties": {"__folium_color": "#f9812e", "lat": 50.668434, "lon": 17.947931, "measured_at": "2026-10-01 08:14:00", "pm25": 23.3, "sensor_id": "PM-053"}, "type": "Feature"}, {"bbox": [17.934142, 50.682153, 17.934142, 50.682153], "geometry": {"coordinates": [17.934142, 50.682153], "type": "Point"}, "id": "101", "properties": {"__folium_color": "#fda35c", "lat": 50.682153, "lon": 17.934142, "measured_at": "2026-10-01 08:03:00", "pm25": 20.1, "sensor_id": "PM-081"}, "type": "Feature"}, {"bbox": [17.926876, 50.67013, 17.926876, 50.67013], "geometry": {"coordinates": [17.926876, 50.67013], "type": "Point"}, "id": "102", "properties": {"__folium_color": "#a43503", "lat": 50.67013, "lon": 17.926876, "measured_at": "2026-10-01 08:47:00", "pm25": 32.2, "sensor_id": "PM-067"}, "type": "Feature"}, {"bbox": [17.868725, 50.703981, 17.868725, 50.703981], "geometry": {"coordinates": [17.868725, 50.703981], "type": "Point"}, "id": "103", "properties": {"__folium_color": "#fee7d1", "lat": 50.703981, "lon": 17.868725, "measured_at": "2026-10-01 08:09:00", "pm25": 12.2, "sensor_id": "PM-134"}, "type": "Feature"}, {"bbox": [17.905731, 50.665912, 17.905731, 50.665912], "geometry": {"coordinates": [17.905731, 50.665912], "type": "Point"}, "id": "104", "properties": {"__folium_color": "#e35608", "lat": 50.665912, "lon": 17.905731, "measured_at": "2026-10-01 08:04:00", "pm25": 27.4, "sensor_id": "PM-084"}, "type": "Feature"}, {"bbox": [17.895437, 50.642902, 17.895437, 50.642902], "geometry": {"coordinates": [17.895437, 50.642902], "type": "Point"}, "id": "105", "properties": {"__folium_color": "#fda762", "lat": 50.642902, "lon": 17.895437, "measured_at": "2026-10-01 08:40:00", "pm25": 19.7, "sensor_id": "PM-138"}, "type": "Feature"}, {"bbox": [17.907346, 50.685333, 17.907346, 50.685333], "geometry": {"coordinates": [17.907346, 50.685333], "type": "Point"}, "id": "106", "properties": {"__folium_color": "#fda965", "lat": 50.685333, "lon": 17.907346, "measured_at": "2026-10-01 08:22:00", "pm25": 19.4, "sensor_id": "PM-071"}, "type": "Feature"}, {"bbox": [17.978447, 50.658296, 17.978447, 50.658296], "geometry": {"coordinates": [17.978447, 50.658296], "type": "Point"}, "id": "107", "properties": {"__folium_color": "#fd9649", "lat": 50.658296, "lon": 17.978447, "measured_at": "2026-10-01 08:31:00", "pm25": 21.4, "sensor_id": "PM-047"}, "type": "Feature"}, {"bbox": [17.904747, 50.670218, 17.904747, 50.670218], "geometry": {"coordinates": [17.904747, 50.670218], "type": "Point"}, "id": "108", "properties": {"__folium_color": "#fd9a4e", "lat": 50.670218, "lon": 17.904747, "measured_at": "2026-10-01 08:21:00", "pm25": 21.0, "sensor_id": "PM-069"}, "type": "Feature"}, {"bbox": [17.873078, 50.653774, 17.873078, 50.653774], "geometry": {"coordinates": [17.873078, 50.653774], "type": "Point"}, "id": "109", "properties": {"__folium_color": "#fedebf", "lat": 50.653774, "lon": 17.873078, "measured_at": "2026-10-01 08:10:00", "pm25": 13.6, "sensor_id": "PM-089"}, "type": "Feature"}, {"bbox": [17.979981, 50.671034, 17.979981, 50.671034], "geometry": {"coordinates": [17.979981, 50.671034], "type": "Point"}, "id": "110", "properties": {"__folium_color": "#feeddc", "lat": 50.671034, "lon": 17.979981, "measured_at": "2026-10-01 08:01:00", "pm25": 10.9, "sensor_id": "PM-070"}, "type": "Feature"}, {"bbox": [17.877844, 50.684965, 17.877844, 50.684965], "geometry": {"coordinates": [17.877844, 50.684965], "type": "Point"}, "id": "111", "properties": {"__folium_color": "#fdad69", "lat": 50.684965, "lon": 17.877844, "measured_at": "2026-10-01 08:04:00", "pm25": 19.1, "sensor_id": "PM-068"}, "type": "Feature"}, {"bbox": [17.951445, 50.674521, 17.951445, 50.674521], "geometry": {"coordinates": [17.951445, 50.674521], "type": "Point"}, "id": "112", "properties": {"__folium_color": "#fdad69", "lat": 50.674521, "lon": 17.951445, "measured_at": "2026-10-01 08:48:00", "pm25": 19.1, "sensor_id": "PM-034"}, "type": "Feature"}, {"bbox": [17.997641, 50.631251, 17.997641, 50.631251], "geometry": {"coordinates": [17.997641, 50.631251], "type": "Point"}, "id": "113", "properties": {"__folium_color": "#fff2e5", "lat": 50.631251, "lon": 17.997641, "measured_at": "2026-10-01 08:21:00", "pm25": 10.0, "sensor_id": "PM-104"}, "type": "Feature"}, {"bbox": [17.906061, 50.651982, 17.906061, 50.651982], "geometry": {"coordinates": [17.906061, 50.651982], "type": "Point"}, "id": "114", "properties": {"__folium_color": "#fd994d", "lat": 50.651982, "lon": 17.906061, "measured_at": "2026-10-01 08:35:00", "pm25": 21.1, "sensor_id": "PM-052"}, "type": "Feature"}, {"bbox": [17.909008, 50.711714, 17.909008, 50.711714], "geometry": {"coordinates": [17.909008, 50.711714], "type": "Point"}, "id": "115", "properties": {"__folium_color": "#fff5eb", "lat": 50.711714, "lon": 17.909008, "measured_at": "2026-10-01 08:01:00", "pm25": 9.2, "sensor_id": "PM-108"}, "type": "Feature"}, {"bbox": [17.938257, 50.694982, 17.938257, 50.694982], "geometry": {"coordinates": [17.938257, 50.694982], "type": "Point"}, "id": "116", "properties": {"__folium_color": "#fdbb81", "lat": 50.694982, "lon": 17.938257, "measured_at": "2026-10-01 08:55:00", "pm25": 17.7, "sensor_id": "PM-005"}, "type": "Feature"}, {"bbox": [17.942967, 50.642899, 17.942967, 50.642899], "geometry": {"coordinates": [17.942967, 50.642899], "type": "Point"}, "id": "117", "properties": {"__folium_color": "#fd9547", "lat": 50.642899, "lon": 17.942967, "measured_at": "2026-10-01 08:37:00", "pm25": 21.5, "sensor_id": "PM-103"}, "type": "Feature"}, {"bbox": [17.911583, 50.640561, 17.911583, 50.640561], "geometry": {"coordinates": [17.911583, 50.640561], "type": "Point"}, "id": "118", "properties": {"__folium_color": "#fdc48f", "lat": 50.640561, "lon": 17.911583, "measured_at": "2026-10-01 08:41:00", "pm25": 16.9, "sensor_id": "PM-038"}, "type": "Feature"}, {"bbox": [17.933271, 50.687587, 17.933271, 50.687587], "geometry": {"coordinates": [17.933271, 50.687587], "type": "Point"}, "id": "119", "properties": {"__folium_color": "#fdbd83", "lat": 50.687587, "lon": 17.933271, "measured_at": "2026-10-01 08:24:00", "pm25": 17.6, "sensor_id": "PM-117"}, "type": "Feature"}, {"bbox": [17.857082, 50.654313, 17.857082, 50.654313], "geometry": {"coordinates": [17.857082, 50.654313], "type": "Point"}, "id": "120", "properties": {"__folium_color": "#fdd5ab", "lat": 50.654313, "lon": 17.857082, "measured_at": "2026-10-01 08:27:00", "pm25": 15.1, "sensor_id": "PM-125"}, "type": "Feature"}, {"bbox": [17.956765, 50.680244, 17.956765, 50.680244], "geometry": {"coordinates": [17.956765, 50.680244], "type": "Point"}, "id": "121", "properties": {"__folium_color": "#fdab66", "lat": 50.680244, "lon": 17.956765, "measured_at": "2026-10-01 08:19:00", "pm25": 19.3, "sensor_id": "PM-032"}, "type": "Feature"}, {"bbox": [17.955013, 50.692352, 17.955013, 50.692352], "geometry": {"coordinates": [17.955013, 50.692352], "type": "Point"}, "id": "122", "properties": {"__folium_color": "#fedebf", "lat": 50.692352, "lon": 17.955013, "measured_at": "2026-10-01 08:52:00", "pm25": 13.6, "sensor_id": "PM-064"}, "type": "Feature"}, {"bbox": [17.902183, 50.652205, 17.902183, 50.652205], "geometry": {"coordinates": [17.902183, 50.652205], "type": "Point"}, "id": "123", "properties": {"__folium_color": "#fdcfa0", "lat": 50.652205, "lon": 17.902183, "measured_at": "2026-10-01 08:42:00", "pm25": 15.9, "sensor_id": "PM-048"}, "type": "Feature"}, {"bbox": [18.003025, 50.62023, 18.003025, 50.62023], "geometry": {"coordinates": [18.003025, 50.62023], "type": "Point"}, "id": "124", "properties": {"__folium_color": "#fee2c7", "lat": 50.62023, "lon": 18.003025, "measured_at": "2026-10-01 08:20:00", "pm25": 13.0, "sensor_id": "PM-105"}, "type": "Feature"}, {"bbox": [17.95577, 50.650969, 17.95577, 50.650969], "geometry": {"coordinates": [17.95577, 50.650969], "type": "Point"}, "id": "125", "properties": {"__folium_color": "#fdb06e", "lat": 50.650969, "lon": 17.95577, "measured_at": "2026-10-01 08:30:00", "pm25": 18.8, "sensor_id": "PM-076"}, "type": "Feature"}, {"bbox": [17.959465, 50.665153, 17.959465, 50.665153], "geometry": {"coordinates": [17.959465, 50.665153], "type": "Point"}, "id": "126", "properties": {"__folium_color": "#fdb97d", "lat": 50.665153, "lon": 17.959465, "measured_at": "2026-10-01 08:12:00", "pm25": 17.9, "sensor_id": "PM-044"}, "type": "Feature"}, {"bbox": [17.916317, 50.683927, 17.916317, 50.683927], "geometry": {"coordinates": [17.916317, 50.683927], "type": "Point"}, "id": "127", "properties": {"__folium_color": "#fdb77a", "lat": 50.683927, "lon": 17.916317, "measured_at": "2026-10-01 08:38:00", "pm25": 18.1, "sensor_id": "PM-023"}, "type": "Feature"}, {"bbox": [17.93444, 50.657254, 17.93444, 50.657254], "geometry": {"coordinates": [17.93444, 50.657254], "type": "Point"}, "id": "128", "properties": {"__folium_color": "#f36e19", "lat": 50.657254, "lon": 17.93444, "measured_at": "2026-10-01 08:46:00", "pm25": 25.1, "sensor_id": "PM-073"}, "type": "Feature"}, {"bbox": [17.907136, 50.660302, 17.907136, 50.660302], "geometry": {"coordinates": [17.907136, 50.660302], "type": "Point"}, "id": "129", "properties": {"__folium_color": "#fdd1a3", "lat": 50.660302, "lon": 17.907136, "measured_at": "2026-10-01 08:00:00", "pm25": 15.7, "sensor_id": "PM-016"}, "type": "Feature"}], "type": "FeatureCollection"});
+
+        
+    
+    geo_json_5b3bb47ac1a35170bf5701c4c05f63e7.bindTooltip(
+    function(layer){
+    let div = L.DomUtil.create('div');
+    
+    let handleObject = feature => {
+        if (feature === null) {
+            return '';
+        } else if (typeof(feature)=='object') {
+            return JSON.stringify(feature);
+        } else {
+            return feature;
+        }
+    }
+    let fields = ["sensor_id", "lat", "lon", "pm25", "measured_at"];
+    let aliases = ["sensor_id", "lat", "lon", "pm25", "measured_at"];
+    let table = '<table>' +
+        String(
+        fields.map(
+        (v,i)=>
+        `<tr>
+            <th>${aliases[i]}</th>
+            
+            <td>${handleObject(layer.feature.properties[v])}</td>
+        </tr>`).join(''))
+    +'</table>';
+    div.innerHTML=table;
+    
+    return div
+    }
+    ,{
+  "sticky": true,
+  "className": "foliumtooltip",
+});
+                     
+    
+            geo_json_5b3bb47ac1a35170bf5701c4c05f63e7.addTo(map_c935690037d2358077f1b71aa608adc4);
+        
+    
+    var color_map_294ce9223e1564c4d61ebac1e8c3ae41 = {};
+
+    
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.color = d3.scale.threshold()
+              .domain([9.2, 9.252304609218436, 9.304609218436873, 9.35691382765531, 9.409218436873747, 9.461523046092184, 9.513827655310621, 9.566132264529058, 9.618436873747495, 9.670741482965932, 9.723046092184369, 9.775350701402806, 9.827655310621243, 9.879959919839678, 9.932264529058116, 9.984569138276552, 10.036873747494989, 10.089178356713425, 10.141482965931862, 10.1937875751503, 10.246092184368736, 10.298396793587173, 10.35070140280561, 10.403006012024047, 10.455310621242484, 10.507615230460921, 10.559919839679358, 10.612224448897795, 10.664529058116232, 10.716833667334669, 10.769138276553106, 10.821442885771543, 10.87374749498998, 10.926052104208416, 10.978356713426853, 11.03066132264529, 11.082965931863727, 11.135270541082164, 11.187575150300601, 11.239879759519038, 11.292184368737473, 11.344488977955912, 11.396793587174347, 11.449098196392786, 11.501402805611221, 11.55370741482966, 11.606012024048095, 11.658316633266532, 11.710621242484969, 11.762925851703406, 11.815230460921843, 11.86753507014028, 11.919839679358716, 11.972144288577153, 12.02444889779559, 12.076753507014027, 12.129058116232464, 12.181362725450901, 12.233667334669338, 12.285971943887775, 12.338276553106212, 12.390581162324649, 12.442885771543086, 12.495190380761523, 12.54749498997996, 12.599799599198395, 12.652104208416834, 12.704408817635269, 12.756713426853707, 12.809018036072143, 12.86132264529058, 12.913627254509016, 12.965931863727453, 13.01823647294589, 13.070541082164327, 13.122845691382764, 13.175150300601201, 13.227454909819638, 13.279759519038075, 13.332064128256512, 13.384368737474949, 13.436673346693386, 13.488977955911823, 13.54128256513026, 13.593587174348695, 13.645891783567134, 13.69819639278557, 13.750501002004007, 13.802805611222443, 13.855110220440881, 13.907414829659318, 13.959719438877755, 14.01202404809619, 14.06432865731463, 14.116633266533064, 14.168937875751503, 14.221242484969938, 14.273547094188377, 14.325851703406812, 14.378156312625249, 14.430460921843686, 14.482765531062125, 14.53507014028056, 14.587374749498997, 14.639679358717434, 14.691983967935872, 14.744288577154308, 14.796593186372744, 14.848897795591181, 14.901202404809617, 14.953507014028055, 15.005811623246492, 15.05811623246493, 15.110420841683364, 15.162725450901803, 15.215030060120238, 15.267334669338677, 15.319639278557112, 15.37194388777555, 15.424248496993986, 15.476553106212423, 15.52885771543086, 15.581162324649299, 15.633466933867734, 15.68577154308617, 15.738076152304608, 15.790380761523046, 15.842685370741481, 15.894989979959918, 15.947294589178355, 15.999599198396792, 16.05190380761523, 16.104208416833664, 16.156513026052103, 16.20881763527054, 16.261122244488977, 16.313426853707412, 16.36573146292585, 16.41803607214429, 16.470340681362725, 16.52264529058116, 16.5749498997996, 16.627254509018034, 16.679559118236472, 16.731863727454908, 16.784168336673346, 16.83647294589178, 16.88877755511022, 16.941082164328655, 16.993386773547094, 17.04569138276553, 17.097995991983964, 17.150300601202403, 17.202605210420842, 17.254909819639277, 17.307214428857712, 17.35951903807615, 17.41182364729459, 17.464128256513025, 17.51643286573146, 17.5687374749499, 17.621042084168337, 17.673346693386772, 17.725651302605208, 17.777955911823646, 17.830260521042085, 17.882565130260517, 17.934869739478955, 17.987174348697394, 18.039478957915833, 18.091783567134268, 18.144088176352703, 18.196392785571142, 18.248697394789577, 18.301002004008012, 18.35330661322645, 18.40561122244489, 18.457915831663325, 18.51022044088176, 18.5625250501002, 18.614829659318637, 18.667134268537072, 18.719438877755508, 18.771743486973946, 18.824048096192385, 18.87635270541082, 18.928657314629255, 18.980961923847694, 19.03326653306613, 19.085571142284568, 19.137875751503003, 19.190180360721442, 19.24248496993988, 19.294789579158312, 19.34709418837675, 19.39939879759519, 19.451703406813625, 19.504008016032063, 19.5563126252505, 19.608617234468937, 19.660921843687376, 19.713226452905808, 19.765531062124246, 19.817835671342685, 19.87014028056112, 19.92244488977956, 19.974749498997994, 20.027054108216433, 20.079358717434868, 20.131663326653303, 20.183967935871742, 20.23627254509018, 20.288577154308616, 20.34088176352705, 20.39318637274549, 20.445490981963925, 20.497795591182363, 20.5501002004008, 20.602404809619237, 20.654709418837676, 20.707014028056108, 20.759318637274546, 20.811623246492985, 20.86392785571142, 20.91623246492986, 20.968537074148294, 21.020841683366733, 21.07314629258517, 21.125450901803603, 21.177755511022042, 21.23006012024048, 21.282364729458916, 21.334669338677354, 21.38697394789579, 21.43927855711423, 21.491583166332664, 21.5438877755511, 21.596192384769537, 21.648496993987976, 21.70080160320641, 21.753106212424846, 21.805410821643285, 21.857715430861724, 21.91002004008016, 21.962324649298594, 22.014629258517033, 22.06693386773547, 22.119238476953907, 22.171543086172342, 22.22384769539078, 22.276152304609216, 22.32845691382765, 22.38076152304609, 22.43306613226453, 22.485370741482967, 22.5376753507014, 22.589979959919837, 22.642284569138276, 22.69458917835671, 22.746893787575146, 22.799198396793585, 22.851503006012024, 22.90380761523046, 22.956112224448894, 23.008416833667333, 23.06072144288577, 23.113026052104207, 23.165330661322642, 23.21763527054108, 23.26993987975952, 23.32224448897795, 23.37454909819639, 23.42685370741483, 23.479158316633264, 23.531462925851702, 23.583767535070137, 23.636072144288576, 23.688376753507015, 23.740681362725446, 23.792985971943885, 23.845290581162324, 23.89759519038076, 23.949899799599198, 24.002204408817633, 24.05450901803607, 24.106813627254507, 24.159118236472942, 24.21142284569138, 24.26372745490982, 24.316032064128255, 24.36833667334669, 24.42064128256513, 24.472945891783567, 24.525250501002002, 24.577555110220437, 24.629859719438876, 24.682164328657315, 24.73446893787575, 24.786773547094185, 24.839078156312624, 24.89138276553106, 24.943687374749498, 24.995991983967933, 25.04829659318637, 25.10060120240481, 25.152905811623242, 25.20521042084168, 25.257515030060116, 25.309819639278555, 25.362124248496993, 25.41442885771543, 25.466733466933867, 25.519038076152302, 25.57134268537074, 25.623647294589176, 25.675951903807615, 25.72825651302605, 25.780561122244485, 25.832865731462924, 25.885170340681363, 25.937474949899798, 25.989779559118233, 26.04208416833667, 26.094388777555107, 26.146693386773546, 26.198997995991984, 26.251302605210416, 26.303607214428855, 26.355911823647293, 26.40821643286573, 26.460521042084167, 26.512825651302602, 26.565130260521038, 26.617434869739476, 26.669739478957915, 26.722044088176354, 26.774348697394785, 26.826653306613224, 26.878957915831663, 26.931262525050098, 26.983567134268537, 27.03587174348697, 27.088176352705407, 27.140480961923846, 27.192785571142284, 27.24509018036072, 27.297394789579155, 27.349699398797593, 27.40200400801603, 27.454308617234467, 27.506613226452906, 27.558917835671338, 27.611222444889776, 27.663527054108215, 27.71583166332665, 27.76813627254509, 27.820440881763524, 27.872745490981963, 27.925050100200398, 27.977354709418837, 28.029659318637275, 28.081963927855707, 28.134268537074146, 28.186573146292584, 28.23887775551102, 28.29118236472946, 28.343486973947893, 28.39579158316633, 28.448096192384767, 28.500400801603206, 28.55270541082164, 28.605010020040076, 28.657314629258515, 28.70961923847695, 28.76192384769539, 28.814228456913828, 28.86653306613226, 28.918837675350698, 28.971142284569137, 29.023446893787575, 29.07575150300601, 29.128056112224446, 29.180360721442884, 29.23266533066132, 29.28496993987976, 29.337274549098197, 29.38957915831663, 29.441883767535067, 29.494188376753506, 29.54649298597194, 29.59879759519038, 29.651102204408815, 29.70340681362725, 29.75571142284569, 29.808016032064128, 29.860320641282563, 29.912625250500998, 29.964929859719437, 30.017234468937872, 30.06953907815631, 30.12184368737475, 30.174148296593184, 30.22645290581162, 30.27875751503006, 30.331062124248497, 30.383366733466932, 30.435671342685367, 30.487975951903806, 30.54028056112224, 30.59258517034068, 30.64488977955912, 30.69719438877755, 30.74949899799599, 30.801803607214428, 30.854108216432863, 30.9064128256513, 30.958717434869737, 31.011022044088172, 31.06332665330661, 31.11563126252505, 31.167935871743488, 31.22024048096192, 31.27254509018036, 31.324849699398797, 31.377154308617232, 31.42945891783567, 31.481763527054106, 31.53406813627254, 31.58637274549098, 31.63867735470942, 31.69098196392785, 31.74328657314629, 31.795591182364728, 31.847895791583163, 31.9002004008016, 31.952505010020037, 32.00480961923847, 32.05711422845691, 32.10941883767535, 32.16172344689379, 32.21402805611222, 32.26633266533066, 32.3186372745491, 32.37094188376753, 32.42324649298597, 32.475551102204406, 32.527855711422845, 32.58016032064128, 32.63246492985972, 32.684769539078154, 32.737074148296585, 32.789378757515024, 32.84168336673346, 32.8939879759519, 32.94629258517034, 32.99859719438877, 33.05090180360721, 33.10320641282565, 33.15551102204408, 33.20781563126252, 33.26012024048096, 33.3124248496994, 33.364729458917836, 33.417034068136275, 33.46933867735471, 33.52164328657314, 33.57394789579158, 33.626252505010015, 33.678557114228454, 33.73086172344689, 33.78316633266533, 33.83547094188376, 33.8877755511022, 33.94008016032064, 33.99238476953907, 34.04468937875751, 34.09699398797595, 34.14929859719439, 34.20160320641283, 34.253907815631266, 34.30621242484969, 34.35851703406813, 34.41082164328657, 34.463126252505006, 34.515430861723445, 34.567735470941884, 34.62004008016032, 34.672344689378754, 34.72464929859719, 34.77695390781563, 34.82925851703406, 34.8815631262525, 34.93386773547094, 34.98617234468938, 35.03847695390782, 35.09078156312625, 35.14308617234468, 35.19539078156312, 35.24769539078156, 35.3])
+              .range(['#fff5ebff', '#fff5ebff', '#fff5eaff', '#fff5eaff', '#fff4e9ff', '#fff4e9ff', '#fff4e8ff', '#fff4e8ff', '#fff3e7ff', '#fff3e7ff', '#fff3e6ff', '#fff3e6ff', '#fff2e6ff', '#fff2e6ff', '#fff2e5ff', '#fff2e5ff', '#fff1e4ff', '#fff1e4ff', '#fff1e3ff', '#fff1e3ff', '#fff0e2ff', '#fff0e2ff', '#fff0e1ff', '#fff0e1ff', '#ffefe0ff', '#ffefe0ff', '#ffefdfff', '#ffefdfff', '#ffeedeff', '#ffeedeff', '#ffeeddff', '#ffeeddff', '#feeddcff', '#feeddcff', '#feeddcff', '#feeddbff', '#feeddbff', '#feeddaff', '#feecdaff', '#feecd9ff', '#feecd9ff', '#feebd8ff', '#feebd8ff', '#feebd7ff', '#feebd7ff', '#feead6ff', '#feead6ff', '#feead5ff', '#feead5ff', '#fee9d4ff', '#fee9d4ff', '#fee9d3ff', '#fee9d3ff', '#fee8d2ff', '#fee8d2ff', '#fee8d2ff', '#fee8d2ff', '#fee7d1ff', '#fee7d1ff', '#fee7d0ff', '#fee7d0ff', '#fee6cfff', '#fee6cfff', '#fee6ceff', '#fee6cdff', '#fee5ccff', '#fee5ccff', '#fee5cbff', '#fee5cbff', '#fee4caff', '#fee4c9ff', '#fee3c8ff', '#fee3c7ff', '#fee2c7ff', '#fee2c6ff', '#fee2c6ff', '#fee2c5ff', '#fee1c4ff', '#fee1c3ff', '#fee0c3ff', '#fee0c1ff', '#fee0c1ff', '#fedfc0ff', '#fedfc0ff', '#fedebfff', '#fedebeff', '#fedebdff', '#fedebdff', '#feddbcff', '#feddbcff', '#fedcbbff', '#fedcbaff', '#fedcb9ff', '#fedcb9ff', '#fddbb8ff', '#fddbb7ff', '#fddab6ff', '#fddab6ff', '#fdd9b5ff', '#fdd9b5ff', '#fdd9b4ff', '#fdd9b3ff', '#fdd8b2ff', '#fdd8b2ff', '#fdd7b1ff', '#fdd7b0ff', '#fdd7afff', '#fdd7afff', '#fdd6aeff', '#fdd6adff', '#fdd5adff', '#fdd5acff', '#fdd5abff', '#fdd5aaff', '#fdd4aaff', '#fdd4a9ff', '#fdd3a9ff', '#fdd3a8ff', '#fdd3a7ff', '#fdd3a6ff', '#fdd2a6ff', '#fdd1a4ff', '#fdd1a4ff', '#fdd1a3ff', '#fdd1a3ff', '#fdd0a2ff', '#fdd0a1ff', '#fdcfa0ff', '#fdcf9fff', '#fdce9eff', '#fdce9dff', '#fdcd9cff', '#fdcc9cff', '#fdcb9bff', '#fdcb9aff', '#fdca99ff', '#fdca98ff', '#fdc997ff', '#fdc996ff', '#fdc895ff', '#fdc895ff', '#fdc794ff', '#fdc793ff', '#fdc692ff', '#fdc691ff', '#fdc590ff', '#fdc58fff', '#fdc48fff', '#fdc48eff', '#fdc38dff', '#fdc38cff', '#fdc28bff', '#fdc28aff', '#fdc189ff', '#fdc188ff', '#fdc088ff', '#fdc087ff', '#fdbf86ff', '#fdbf85ff', '#fdbe84ff', '#fdbd83ff', '#fdbd82ff', '#fdbc81ff', '#fdbb80ff', '#fdba7fff', '#fdba7eff', '#fdb97dff', '#fdb97dff', '#fdb87cff', '#fdb87bff', '#fdb77aff', '#fdb779ff', '#fdb678ff', '#fdb677ff', '#fdb576ff', '#fdb576ff', '#fdb475ff', '#fdb474ff', '#fdb373ff', '#fdb372ff', '#fdb271ff', '#fdb270ff', '#fdb170ff', '#fdb16fff', '#fdb06eff', '#fdb06dff', '#fdaf6cff', '#fdaf6bff', '#fdae6aff', '#fdae69ff', '#fdad69ff', '#fdad68ff', '#fdac67ff', '#fdac66ff', '#fdab66ff', '#fdaa65ff', '#fda965ff', '#fda864ff', '#fda863ff', '#fda762ff', '#fda761ff', '#fda660ff', '#fda660ff', '#fda55fff', '#fda55eff', '#fda45dff', '#fda45dff', '#fda35cff', '#fda35bff', '#fda25aff', '#fda25aff', '#fda159ff', '#fda158ff', '#fda057ff', '#fda056ff', '#fd9f56ff', '#fd9f55ff', '#fd9e54ff', '#fd9e53ff', '#fd9d53ff', '#fd9d52ff', '#fd9c51ff', '#fd9c50ff', '#fd9b50ff', '#fd9b4fff', '#fd9a4eff', '#fd9a4dff', '#fd994dff', '#fd994cff', '#fd984bff', '#fd984aff', '#fd974aff', '#fd9749ff', '#fd9649ff', '#fd9648ff', '#fd9547ff', '#fd9446ff', '#fd9446ff', '#fd9345ff', '#fd9344ff', '#fd9243ff', '#fd9242ff', '#fd9141ff', '#fd9141ff', '#fd9040ff', '#fd903fff', '#fd8f3eff', '#fd8f3eff', '#fd8e3dff', '#fd8e3cff', '#fd8d3bff', '#fd8c3aff', '#fd8b3aff', '#fc8b39ff', '#fc8a39ff', '#fc8a38ff', '#fc8937ff', '#fc8936ff', '#fc8836ff', '#fb8835ff', '#fb8735ff', '#fb8734ff', '#fb8634ff', '#fb8633ff', '#fb8532ff', '#fa8431ff', '#fa8331ff', '#fa8330ff', '#fa8230ff', '#f9822fff', '#f9812eff', '#f9812dff', '#f9802dff', '#f97f2cff', '#f87f2cff', '#f87e2bff', '#f87e2bff', '#f87d2aff', '#f87d29ff', '#f87c28ff', '#f77b28ff', '#f77a27ff', '#f77a26ff', '#f77925ff', '#f67925ff', '#f67824ff', '#f67823ff', '#f67723ff', '#f67722ff', '#f67622ff', '#f57621ff', '#f57520ff', '#f5751fff', '#f5741fff', '#f5731eff', '#f5721eff', '#f4721dff', '#f4711cff', '#f4711bff', '#f4701bff', '#f3701aff', '#f36f1aff', '#f36f19ff', '#f36e19ff', '#f36e18ff', '#f36d17ff', '#f26d16ff', '#f26c16ff', '#f26c15ff', '#f26b15ff', '#f26a14ff', '#f26913ff', '#f16813ff', '#f16813ff', '#f16712ff', '#f06712ff', '#f06612ff', '#ef6612ff', '#ef6511ff', '#ee6511ff', '#ee6410ff', '#ee6410ff', '#ee6310ff', '#ed6310ff', '#ed620fff', '#ec620fff', '#ec610fff', '#eb610eff', '#eb600eff', '#eb600eff', '#eb5f0eff', '#ea5f0dff', '#ea5e0dff', '#e95e0cff', '#e95d0cff', '#e85d0cff', '#e85c0cff', '#e75c0bff', '#e75b0bff', '#e75b0bff', '#e75a0bff', '#e65a0aff', '#e6590aff', '#e5590aff', '#e5580aff', '#e45809ff', '#e45709ff', '#e45708ff', '#e45608ff', '#e35508ff', '#e35508ff', '#e25407ff', '#e25407ff', '#e15307ff', '#e15307ff', '#e15206ff', '#e05206ff', '#e05106ff', '#df5106ff', '#df5005ff', '#de5005ff', '#de4f05ff', '#de4e05ff', '#de4d04ff', '#dd4d04ff', '#dd4c03ff', '#dc4c03ff', '#dc4b03ff', '#db4b02ff', '#db4a02ff', '#db4a02ff', '#db4902ff', '#da4901ff', '#da4801ff', '#d94801ff', '#d94801ff', '#d84801ff', '#d74701ff', '#d64701ff', '#d64601ff', '#d54601ff', '#d44601ff', '#d34601ff', '#d24501ff', '#d14501ff', '#d14501ff', '#d04501ff', '#cf4401ff', '#ce4401ff', '#ce4401ff', '#cd4301ff', '#cc4301ff', '#cb4202ff', '#ca4202ff', '#c94202ff', '#c84202ff', '#c84102ff', '#c74102ff', '#c64102ff', '#c54102ff', '#c44002ff', '#c34002ff', '#c24002ff', '#c14002ff', '#c13f02ff', '#c03f02ff', '#bf3f02ff', '#be3f02ff', '#be3e02ff', '#bd3e02ff', '#bc3d02ff', '#bb3d02ff', '#ba3d02ff', '#b93d02ff', '#b93c02ff', '#b83c02ff', '#b73c02ff', '#b63c02ff', '#b63b02ff', '#b53b02ff', '#b43b02ff', '#b33b02ff', '#b23a02ff', '#b13a03ff', '#b13903ff', '#b03903ff', '#af3903ff', '#ae3903ff', '#ad3803ff', '#ad3803ff', '#ac3803ff', '#ab3703ff', '#aa3703ff', '#a93703ff', '#a83703ff', '#a83603ff', '#a73603ff', '#a63603ff', '#a53603ff', '#a53503ff', '#a43503ff', '#a33503ff', '#a23503ff', '#a23403ff', '#a13403ff', '#a13403ff', '#a03403ff', '#a03303ff', '#9f3303ff', '#9f3303ff', '#9e3303ff', '#9d3203ff', '#9c3203ff', '#9c3203ff', '#9b3203ff', '#9b3103ff', '#9a3103ff', '#9a3103ff', '#993103ff', '#983003ff', '#973003ff', '#973003ff', '#963003ff', '#952f03ff', '#952f03ff', '#942f03ff', '#942f03ff', '#932f03ff', '#932f03ff', '#922e03ff', '#912e04ff', '#902e04ff', '#902d04ff', '#8f2d04ff', '#8f2d04ff', '#8e2d04ff', '#8e2c04ff', '#8d2c04ff', '#8c2c04ff', '#8b2c04ff', '#8b2b04ff', '#8a2b04ff', '#8a2b04ff', '#892b04ff', '#892a04ff', '#882a04ff', '#872a04ff', '#862a04ff', '#862904ff', '#852904ff', '#852904ff', '#842904ff', '#842804ff', '#832804ff', '#822804ff', '#812804ff', '#812704ff', '#802704ff', '#802704ff', '#7f2704ff']);
+    
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.x = d3.scale.linear()
+              .domain([9.2, 35.3])
+              .range([0, 450 - 50]);
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.legend = L.control({position: 'topright'});
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.legend.onAdd = function (map) {var div = L.DomUtil.create('div', 'legend'); return div};
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.legend.addTo(map_c935690037d2358077f1b71aa608adc4);
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.xAxis = d3.svg.axis()
+        .scale(color_map_294ce9223e1564c4d61ebac1e8c3ae41.x)
+        .orient("top")
+        .tickSize(1)
+        .tickValues([9.2, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 11.861176470588234, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 14.522352941176468, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 17.183529411764702, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 19.84470588235294, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 22.505882352941175, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 25.16705882352941, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 27.828235294117647, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 30.489411764705878, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', 33.150588235294116, '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '', '']);
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.svg = d3.select(".legend.leaflet-control").append("svg")
+        .attr("id", 'legend')
+        .attr("width", 450)
+        .attr("height", 40);
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.g = color_map_294ce9223e1564c4d61ebac1e8c3ae41.svg.append("g")
+        .attr("class", "key")
+        .attr("fill", "black")
+        .attr("transform", "translate(25,16)");
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.g.selectAll("rect")
+        .data(color_map_294ce9223e1564c4d61ebac1e8c3ae41.color.range().map(function(d, i) {
+          return {
+            x0: i ? color_map_294ce9223e1564c4d61ebac1e8c3ae41.x(color_map_294ce9223e1564c4d61ebac1e8c3ae41.color.domain()[i - 1]) : color_map_294ce9223e1564c4d61ebac1e8c3ae41.x.range()[0],
+            x1: i < color_map_294ce9223e1564c4d61ebac1e8c3ae41.color.domain().length ? color_map_294ce9223e1564c4d61ebac1e8c3ae41.x(color_map_294ce9223e1564c4d61ebac1e8c3ae41.color.domain()[i]) : color_map_294ce9223e1564c4d61ebac1e8c3ae41.x.range()[1],
+            z: d
+          };
+        }))
+      .enter().append("rect")
+        .attr("height", 40 - 30)
+        .attr("x", function(d) { return d.x0; })
+        .attr("width", function(d) { return d.x1 - d.x0; })
+        .style("fill", function(d) { return d.z; });
+
+    color_map_294ce9223e1564c4d61ebac1e8c3ae41.g.call(color_map_294ce9223e1564c4d61ebac1e8c3ae41.xAxis).append("text")
+        .attr("class", "caption")
+        .attr("y", 21)
+        .attr("fill", "black")
+        .text("pm25");
+</script>
+</html>
