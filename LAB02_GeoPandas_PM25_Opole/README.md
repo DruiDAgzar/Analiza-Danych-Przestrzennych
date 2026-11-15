@@ -114,3 +114,11 @@ Mapy interaktywne (do pobrania i otwarcia w przeglądarce): `images/mapa_czujnik
 - Odległości, powierzchnie i bufory trzeba liczyć w układzie metrycznym (w Polsce EPSG:2180). EPSG:3857 zawyża odległości o ok. 62 %, a `buffer(1500)` w EPSG:4326 tworzy „bufor” obejmujący całą Ziemię.
 - Najwyższe średnie PM2.5 wystąpiły w centrum miasta: Stare Miasto, Śródmieście, Zaodrze.
 - **Ograniczenia:** odczyty PM2.5 są syntetyczne, więc wyniki ilustrują metodę, a nie rzeczywistą jakość powietrza w Opolu. Średnie oparte są na 3–13 czujnikach na dzielnicę i jednym momencie pomiaru; 3 dzielnice nie mają danych.
+
+## Weryfikacja wyników w QGIS (A9)
+
+Plik `wyniki/pm25.gpkg` otwarto w QGIS 3.34. Obie warstwy (`districts`, `sensors`) wczytały się poprawnie w układzie EPSG:2180, a tabela atrybutów warstwy `districts` zawiera 29 obiektów z polami `pm25_mean` i `sensor_count`. Etykiety pokazują nazwę dzielnicy i średnie PM2.5; trzy dzielnice bez czujników (Bierkowice, Borki, Grotowice) oznaczono jako „brak danych”.
+
+Wyrażenie etykiety: `"name" || '\n' || coalesce(format_number("pm25_mean", 1) || ' µg/m³', 'brak danych')`
+
+![Warstwy pm25.gpkg w QGIS z etykietami średniego PM2.5](images/10_A9_qgis_gpkg.png)
