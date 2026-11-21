@@ -122,3 +122,15 @@ Plik `wyniki/pm25.gpkg` otwarto w QGIS 3.34. Obie warstwy (`districts`, `sensors
 Wyrażenie etykiety: `"name" || '\n' || coalesce(format_number("pm25_mean", 1) || ' µg/m³', 'brak danych')`
 
 ![Warstwy pm25.gpkg w QGIS z etykietami średniego PM2.5](images/10_A9_qgis_gpkg.png)
+
+## Mapy wynikowe (A7, A8)
+
+**Średnie PM2.5 w dzielnicach** (kartogram, kwantyle k = 5, podkład Esri World Gray Canvas) z czujnikami; szare dzielnice nie mają czujników:
+
+![Kartogram średniego PM2.5 w dzielnicach Opola z czujnikami](images/11_A7_kartogram.png)
+
+**Średnie PM2.5 w buforach 500 m wokół szkół podstawowych**; szare bufory nie zawierają żadnego czujnika:
+
+![Bufory 500 m wokół szkół wg średniego PM2.5](images/12_A8_bufory.png)
+
+Mapy interaktywne: `images/mapa_A7_kartogram.html`, `images/mapa_A8_bufory.html`.
