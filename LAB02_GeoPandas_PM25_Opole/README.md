@@ -131,6 +131,6 @@ Wyrażenie etykiety: `"name" || '\n' || coalesce(format_number("pm25_mean", 1) |
 
 **Średnie PM2.5 w buforach 500 m wokół szkół podstawowych**; szare bufory nie zawierają żadnego czujnika:
 
-![Bufory 500 m wokół szkół wg średniego PM2.5](images/12_A8_bufory.png)
+![Bufory 500 m wokół szkół wg średniego PM2.5](images/12_A8_bufory_500m.png)
 
 Mapy interaktywne: `images/mapa_A7_kartogram.html`, `images/mapa_A8_bufory.html`.
