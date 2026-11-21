@@ -134,3 +134,38 @@ Wyrażenie etykiety: `"name" || '\n' || coalesce(format_number("pm25_mean", 1) |
 ![Bufory 500 m wokół szkół wg średniego PM2.5](images/12_A8_bufory_500m.png)
 
 Mapy interaktywne: `images/mapa_A7_kartogram.html`, `images/mapa_A8_bufory.html`.
+
+---
+
+# Część B — Rasterio i NDVI
+
+**Notatnik:** `lab_rasterio.ipynb` (kroki B1–B9).
+
+**Dane:** Sentinel-2 L2A z **28.10.2026**, pasma B04 (Red) i B08 (NIR), pobrane z [Copernicus Browser](https://browser.dataspace.copernicus.eu/) (Analytical, TIFF 32-bit float, WGS 84, rozdzielczość HIGH). Pliki rastrowe nie są dołączone do repozytorium ze względu na rozmiar — notatnik oczekuje ich w `dane/S2_L2A_2026-10-28_B04.tiff` i `dane/S2_L2A_2026-10-28_B08.tiff`. Prowadzący w przykładzie użył sceny z 6.10.2026 i innego zakresu obszaru, dlatego wyniki liczbowe nieznacznie się różnią.
+
+## Przebieg
+
+| Krok | Zakres |
+|---|---|
+| B1–B2 | raster i GeoTIFF, metadane (2500 × 2314 px, EPSG:4326, nodata brak) |
+| B3 | piksel ↔ współrzędne (`src.xy`, `src.index`), piksel w stopniach ≈ 7,7 × 7,6 m |
+| B4 | statystyki i histogramy pasm Red i NIR |
+| B5 | wspólna siatka: `reproject` do **EPSG:2180**, piksel 10 × 10 m (1952 × 1806 px) |
+| B6 | NDVI = (B08 − B04) / (B08 + B04) |
+| B7 | klasyfikacja NDVI i powierzchnie klas |
+| B8 | statystyki strefowe NDVI w 29 dzielnicach Opola |
+| B9 | zapis wyniku do GeoTIFF (`ndvi_opole_2026-10-28.tif`) i tabeli CSV |
+
+## Wyniki
+
+- **Średnie NDVI** sceny: **0,567** (zakres −0,83 … 1,00).
+- **Klasy:** gęsta roślinność (> 0,5) 62,4 % (213,8 km²), rzadka roślinność (0,2–0,5) 31,5 %, zabudowa / goła gleba (0–0,2) 5,4 %, woda (< 0) 0,7 %.
+- **Dzielnice** (tylko z pokryciem sceną ≥ 80%): najwyższe NDVI — Grudzice (0,714), Nadodrze (0,650), Borki (0,582); najniższe — Zakrzów (0,392), Śródmieście (0,381), Stare Miasto (0,353). Pełna tabela: `wyniki/ndvi_dzielnice.csv`.
+
+![NDVI i średnie NDVI w dzielnicach Opola](images/13_B8_ndvi_dzielnice.png)
+
+## Wnioski
+
+- Najmniej zieleni jest w zwartej zabudowie centrum (Stare Miasto, Śródmieście), najwięcej w dzielnicach z dużym udziałem lasów i terenów zielonych (Grudzice, Nadodrze). Ten sam układ wystąpił w przykładzie prowadzącego dla sceny z 6.10.2026 (Grudzice 0,717, Nadodrze 0,661).
+- Raster w EPSG:4326 trzeba przeprojektować do układu metrycznego (EPSG:2180), żeby liczyć powierzchnie i statystyki strefowe w metrach.
+- **Ograniczenia:** pojedyncza scena z końca października (część pól po zbiorach, inny stan roślinności niż latem); rozdzielczość 10 m; dzielnice Świerkle (27%), Wrzoski (60%) i Brzezie (0%) leżą częściowo lub całkowicie poza zakresem sceny, więc ich średnie pominięto we wnioskach.
